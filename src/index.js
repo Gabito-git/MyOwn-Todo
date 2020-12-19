@@ -5,9 +5,13 @@ import { agregarHTML, footer } from './js/componentes';
 
 export const todoList = new TodoList();
 
-todoList.cargarLocalTodos();
+if( localStorage.getItem('todos') ){
 
-todoList.todos = ( todoList.todos.length > 0 ) ? todoList.todos.map( Todo.instanciarTodo ): [];
+    todoList.cargarLocalTodos();
+
+    todoList.todos = ( todoList.todos.length > 0 ) ? todoList.todos.map( Todo.instanciarTodo ): [];
+
+}
 
 todoList.todos.forEach( agregarHTML );
 
