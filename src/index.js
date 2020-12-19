@@ -7,7 +7,7 @@ export const todoList = new TodoList();
 
 todoList.cargarLocalTodos();
 
-todoList.todos = todoList.todos.map( Todo.instanciarTodo );
+todoList.todos = ( todoList.todos.length > 0 ) ? todoList.todos.map( Todo.instanciarTodo ): [];
 
 todoList.todos.forEach( agregarHTML );
 
